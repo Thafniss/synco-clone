@@ -1,0 +1,23 @@
+.about {
+  background-color: #333533;
+  color: #ffffff;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.about-container {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.about h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #3c096c;
+}
+
+.about p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #d9d9d9; /* um cinza claro para contraste */
+}
