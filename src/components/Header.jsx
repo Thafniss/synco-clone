@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import "../styles/Header.css";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -14,41 +13,68 @@ export default function Header() {
   }, []);
 
   return (
-    <header className={`header ${scrolled ? "scrolled" : ""}`}>
-      <div className="container header-container">
-        <div className="logo">
-          {/* Aqui você pode colocar sua imagem: <img src="logo.png" alt="Synco" /> */}
+    <header
+      className={`fixed w-full top-0 z-50 transition-shadow ${
+        scrolled ? "shadow-md" : "shadow-none"
+      }`}
+      style={{
+        background: "linear-gradient(135deg,#403d39,hsl(210, 6.30%, 12.50%))", 
+      }}
+    >
+      <div className="flex items-center justify-between px-10 py-4">
+        <div className="text-2xl font-extrabold tracking-wide text-white cursor-default select-none">
           Synco
         </div>
 
+        {/* Botão menu mobile */}
         <button
-          className={`menu-toggle ${menuOpen ? "open" : ""}`}
-          aria-label="Toggle menu"
           onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Toggle menu"
+          className="md:hidden flex flex-col justify-center items-center gap-[6px] w-8 h-8 group"
         >
-          <span className="bar"></span>
-          <span className="bar"></span>
-          <span className="bar"></span>
+          <span
+            className={`block h-0.5 w-6 bg-white rounded transition-transform duration-300 origin-center ${
+              menuOpen ? "rotate-45 translate-y-1.5" : ""
+            }`}
+          />
+          <span
+            className={`block h-0.5 w-6 bg-white rounded transition-opacity duration-300 ${
+              menuOpen ? "opacity-0" : "opacity-100"
+            }`}
+          />
+          <span
+            className={`block h-0.5 w-6 bg-white rounded transition-transform duration-300 origin-center ${
+              menuOpen ? "-rotate-45 -translate-y-1.5" : ""
+            }`}
+          />
         </button>
 
-        <nav className={`nav ${menuOpen ? "nav-open" : ""}`}>
-          <ul className="nav-list">
-            <li>
-              <a href="#home" onClick={() => setMenuOpen(false)}>Home</a>
-            </li>
-            <li>
-              <a href="#product" onClick={() => setMenuOpen(false)}>Our Product</a>
-            </li>
-            <li>
-              <a href="#about" onClick={() => setMenuOpen(false)}>About Us</a>
-            </li>
-            <li>
-              <a href="#blog" onClick={() => setMenuOpen(false)}>Blog</a>
-            </li>
-            <li>
-              <a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a>
-            </li>
-          </ul>
+        {/* Menu desktop */}
+        <nav
+          className={`fixed top-[60px] left-0 w-full md:static md:w-auto transition-transform duration-300 md:translate-x-0 ${
+            menuOpen ? "translate-x-0" : "-translate-x-full"
+          } md:flex`}
+  
+        >
+        <ul className="flex flex-col md:flex-row md:gap-10 text-white font-medium text-lg px-6 py-6 md:p-0">
+  {[
+    { label: "Home", href: "#home" },
+    { label: "Our Product", href: "#product" },
+    { label: "About Us", href: "#about" },
+    { label: "Blog", href: "#blog" },
+    { label: "Contact", href: "#contact" },
+  ].map(({ label, href }) => (
+    <li key={label} className="mb-4 md:mb-0">
+      <a
+        href={href}
+        onClick={() => setMenuOpen(false)}
+        className="text-white hover:text-syncoGreen transition-colors duration-300"
+      >
+        {label}
+      </a>
+    </li>
+  ))}
+</ul>
         </nav>
       </div>
     </header>
