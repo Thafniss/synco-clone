@@ -1,8 +1,16 @@
+// src/components/Features.jsx
 import "../styles/Features.css";
+import useFadeIn from "../hooks/useFadeIn";
 
 export default function Features() {
+  const [ref, isVisible] = useFadeIn();
+
   return (
-    <section className="features">
+    <section
+      className={`features ${isVisible ? "fade-in" : ""}`}
+      id="features"
+      ref={ref}
+    >
       <div className="features-container">
         <h2>Our Features</h2>
         <div className="features-list">

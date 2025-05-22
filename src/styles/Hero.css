@@ -1,22 +1,75 @@
+/* Fonte Inter */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
 .hero {
-  background-color: #3c096c;
-  color: white;
-  padding: 100px 20px;
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #283d3b, #3c6e71);
+  color: #fdfffc;
+  font-family: 'Inter', sans-serif;
+  overflow: hidden;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Se quiser depois pode usar: background-image: url('sua-imagem.jpg'); */
+  opacity: 0.2;
+}
+
+.hero-container {
+  position: relative;
   text-align: center;
+  z-index: 1;
+  max-width: 800px;
+  padding: 0 20px;
+  animation: fadeInUp 1s ease forwards;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.hero p {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
 }
 
 .hero-button {
-  margin-top: 20px;
-  background-color: #10002b;
-  color: white;
-  border: none;
-  padding: 12px 24px;
+  background-color: #67b99a;
+  color: #242423;
+  padding: 1rem 2rem;
   font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 50px;
   cursor: pointer;
-  border-radius: 4px;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .hero-button:hover {
-  background-color: #242423;
+  background-color: #56a68a;
+  transform: scale(1.05);
+}
+
+/* Animação de entrada */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

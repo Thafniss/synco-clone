@@ -1,50 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
 .blog-section {
   padding: 80px 20px;
-  background-color: #FDFFFC;
+  background-color: #242423;
+  color: #fdfffc;
+  font-family: 'Inter', sans-serif;
+  text-align: center;
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1100px;
   margin: 0 auto;
 }
 
 .blog-title {
-  font-size: 2.5rem;
-  color: #283D3B;
-  margin-bottom: 40px;
-  text-align: center;
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 50px;
+  color: #67b99a;
+  letter-spacing: 1px;
 }
 
 .blog-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 30px;
 }
 
 .blog-card {
-  background-color: #D9D9D9;
-  padding: 20px;
+  background-color: #333533;
+  padding: 25px 30px;
   border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 20px rgba(60, 9, 108, 0.3);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.blog-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 15px 30px rgba(103, 185, 154, 0.6);
 }
 
 .blog-card h3 {
-  color: #283D3B;
-  margin-bottom: 10px;
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #67b99a;
+  line-height: 1.2;
 }
 
 .blog-card p {
-  color: #3C6E71;
-  margin-bottom: 15px;
+  flex-grow: 1;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #d9d9d9;
+  margin-bottom: 1.8rem;
+  opacity: 0.9;
 }
 
 .blog-link {
+  font-weight: 600;
+  font-size: 1rem;
+  color: #3c6e71;
   text-decoration: none;
-  color: #67B99A;
-  font-weight: bold;
-  transition: color 0.3s ease;
+  align-self: flex-start;
+  transition: color 0.25s ease;
 }
 
 .blog-link:hover {
-  color: #3C6E71;
+  color: #67b99a;
+}
+
+/* Animação fade-in/out */
+.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.8s ease-out;
+}
+
+.fade-out {
+  opacity: 0;
+  transform: translateY(30px);
 }

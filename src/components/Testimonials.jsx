@@ -1,4 +1,5 @@
 import React from 'react';
+import useFadeIn from '../hooks/useFadeIn';
 import '../styles/Testimonials.css';
 
 const testimonials = [
@@ -38,11 +39,19 @@ const testimonials = [
 ];
 
 export default function Testimonials() {
+  // hooks para animação fade-in
+  const [refLarge, visibleLarge] = useFadeIn();
+  const [refSmalls, visibleSmalls] = useFadeIn();
+
   return (
     <section className="testimonials-section">
       <div className="container testimonials-layout">
-        {/* James Sadler destaque */}
-        <div className="testimonial-card large-card">
+
+        {/* Card grande com fade-in */}
+        <div
+          ref={refLarge}
+          className={`testimonial-card large-card ${visibleLarge ? "fade-in" : "fade-out"}`}
+        >
           <blockquote className="testimonial-text">"{testimonials[0].testimonial}"</blockquote>
           <footer>
             <p className="testimonial-name">{testimonials[0].name}</p>
@@ -50,8 +59,11 @@ export default function Testimonials() {
           </footer>
         </div>
 
-        {/* Outros 4 */}
-        <div className="small-cards-column">
+        {/* Coluna com cards pequenos com fade-in */}
+        <div
+          ref={refSmalls}
+          className={`small-cards-column ${visibleSmalls ? "fade-in" : "fade-out"}`}
+        >
           {testimonials.slice(1).map(({ name, role, testimonial }, index) => (
             <div className="testimonial-card small-card" key={index}>
               <blockquote className="testimonial-text">"{testimonial}"</blockquote>
@@ -62,6 +74,7 @@ export default function Testimonials() {
             </div>
           ))}
         </div>
+
       </div>
     </section>
   );

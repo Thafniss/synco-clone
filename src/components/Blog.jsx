@@ -1,5 +1,6 @@
 import React from 'react';
 import '../styles/Blog.css';
+import useFadeIn from '../hooks/useFadeIn';
 
 const blogPosts = [
   {
@@ -20,8 +21,14 @@ const blogPosts = [
 ];
 
 export default function Blog() {
+  const [ref, isVisible] = useFadeIn();
+
   return (
-    <section className="blog-section" id="blog">
+    <section
+      className={`blog-section ${isVisible ? 'fade-in' : 'fade-out'}`}
+      id="blog"
+      ref={ref}
+    >
       <div className="container">
         <h2 className="blog-title">Latest Insights</h2>
         <div className="blog-grid">

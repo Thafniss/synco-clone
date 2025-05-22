@@ -1,26 +1,56 @@
+/* Fonte Inter */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
 .about {
-  padding: 4rem 1.5rem;
-  background-color: #f9fafb; /* um cinza bem claro para contraste suave */
-  color: #1f2937; /* um cinza escuro, quase preto para o texto */
-  text-align: center;
+  width: 100%;
+  padding: 100px 20px;
+  background: #242423;
+  color: #fdfffc;
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .about-container {
   max-width: 800px;
-  margin: 0 auto;
+  text-align: center;
+  animation: fadeInUp 1s ease forwards;
 }
 
 .about h2 {
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 1.5rem;
-  color: #0f172a; /* um azul bem escuro */
+  color: #67b99a;
 }
 
 .about p {
-  font-size: 1.125rem;
-  line-height: 1.75;
-  font-weight: 400;
-  max-width: 600px;
-  margin: 0 auto;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+/* Animação para quando for visível */
+.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.8s ease-out;
+}
+
+.fade-out {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+/* Keyframes opcional (se quiser reforçar): */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

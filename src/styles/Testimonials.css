@@ -1,14 +1,7 @@
-/* Reset básico */
-* {
-  box-sizing: border-box;
-}
-
 .testimonials-section {
-  padding: 6rem 2rem;
-  background: #fff;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  color: #111;
+  padding: 4rem 1rem;
+  background: #f8f9fa;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .container {
@@ -18,150 +11,100 @@
 
 .testimonials-layout {
   display: flex;
-  gap: 3rem;
-  align-items: stretch;
-  flex-wrap: wrap;
-}
-
-/* Card do James - maior e com destaque */
-.large-card {
-  flex: 1 1 48%;
-  background: #f9fafb;
-  border-radius: 24px;
-  padding: 3rem 3.5rem;
-  box-shadow: 0 14px 24px rgba(0, 0, 0, 0.08);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  transition: transform 0.3s ease;
-}
-
-.large-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
-}
-
-.large-card .testimonial-text {
-  font-size: 1.15rem;
-  font-weight: 500;
-  line-height: 1.7;
-  color: #1a1a1a;
-  margin-bottom: 2.5rem;
-  font-style: italic;
-  position: relative;
-  padding-left: 1.5rem;
-}
-
-.large-card .testimonial-text::before {
-  content: "“";
-  font-size: 3.5rem;
-  color: #4f46e5; /* azul roxo tipo Kajo */
-  position: absolute;
-  left: 0;
-  top: -0.5rem;
-  font-weight: 700;
-}
-
-.large-card footer {
-  border-top: 1px solid #ddd;
-  padding-top: 1.25rem;
-}
-
-.large-card .testimonial-name {
-  font-weight: 700;
-  font-size: 1.25rem;
-  color: #3b3b3b;
-  margin-bottom: 0.3rem;
-}
-
-.large-card .testimonial-role {
-  font-weight: 500;
-  font-size: 1rem;
-  color: #6b7280;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-/* Coluna com os 4 cards menores */
-.small-cards-column {
-  flex: 1 1 48%;
-  display: flex;
-  flex-direction: column;
   gap: 2rem;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-/* Cards menores */
-.small-card {
-  background: #f9fafb;
-  border-radius: 20px;
-  padding: 2rem 2.5rem;
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.06);
+/* Fade-in animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.fade-out {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+/* Large card destaque */
+.large-card {
+  flex: 2 1 60%;
+  background: white;
+  padding: 2rem;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+  border-radius: 12px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  transition: transform 0.25s ease;
-  min-height: 160px;
+  opacity: 0;
+  transform: translateY(20px);
 }
 
-.small-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.1);
-}
-
-.small-card .testimonial-text {
-  font-size: 1rem;
-  font-weight: 400;
+.large-card blockquote {
+  font-size: 1.1rem;
   line-height: 1.5;
   color: #333;
-  margin-bottom: 1.6rem;
+  margin-bottom: 1.5rem;
   font-style: italic;
-  position: relative;
-  padding-left: 1.2rem;
 }
 
-.small-card .testimonial-text::before {
-  content: "“";
-  font-size: 2.5rem;
-  color: #6366f1;
-  position: absolute;
-  left: 0;
-  top: -0.25rem;
+.large-card footer p {
+  margin: 0;
+}
+
+.testimonial-name {
   font-weight: 700;
-}
-
-.small-card footer {
-  border-top: 1px solid #ddd;
-  padding-top: 1rem;
-}
-
-.small-card .testimonial-name {
-  font-weight: 600;
   font-size: 1.1rem;
-  color: #222;
-  margin-bottom: 0.2rem;
+  color: #1f2937;
 }
 
-.small-card .testimonial-role {
-  font-weight: 400;
+.testimonial-role {
+  font-weight: 500;
   font-size: 0.9rem;
-  color: #7c7c7c;
-  text-transform: uppercase;
-  letter-spacing: 0.9px;
+  color: #6b7280;
+  margin-top: 0.3rem;
 }
 
-/* RESPONSIVIDADE */
-@media (max-width: 900px) {
-  .testimonials-layout {
-    flex-direction: column;
-  }
+/* Coluna de cards pequenos */
+.small-cards-column {
+  flex: 1 1 35%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  opacity: 0;
+  transform: translateY(20px);
+}
 
-  .large-card,
-  .small-cards-column {
-    flex: 1 1 100%;
-  }
+/* Cards pequenos */
+.small-card {
+  background: white;
+  padding: 1rem 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.07);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 
-  .small-cards-column {
-    gap: 1.5rem;
-  }
+.small-card blockquote {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: #444;
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.small-card footer p {
+  margin: 0;
 }
