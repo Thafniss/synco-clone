@@ -9,7 +9,6 @@ export default function Header() {
       <div className="container header-container">
         <div className="logo">Synco</div>
 
-        {/* Ícone hambúrguer */}
         <button
           className="menu-toggle"
           aria-label="Toggle menu"
@@ -20,7 +19,6 @@ export default function Header() {
           <span className={`bar ${menuOpen ? "open" : ""}`}></span>
         </button>
 
-        {/* Menu de navegação */}
         <nav className={`nav ${menuOpen ? "nav-open" : ""}`}>
           <ul className="nav-list">
             <li><a href="#home" onClick={() => setMenuOpen(false)}>Home</a></li>

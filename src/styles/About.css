@@ -1,23 +1,26 @@
 .about {
-  background-color: #333533;
-  color: #ffffff;
-  padding: 80px 20px;
+  padding: 4rem 1.5rem;
+  background-color: #f9fafb; /* um cinza bem claro para contraste suave */
+  color: #1f2937; /* um cinza escuro, quase preto para o texto */
   text-align: center;
 }
 
 .about-container {
-  max-width: 700px;
+  max-width: 800px;
   margin: 0 auto;
 }
 
 .about h2 {
   font-size: 2.5rem;
-  margin-bottom: 20px;
-  color: #3c096c;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #0f172a; /* um azul bem escuro */
 }
 
 .about p {
-  font-size: 1.2rem;
-  line-height: 1.6;
-  color: #d9d9d9; /* um cinza claro para contraste */
+  font-size: 1.125rem;
+  line-height: 1.75;
+  font-weight: 400;
+  max-width: 600px;
+  margin: 0 auto;
 }

@@ -2,20 +2,21 @@ import "../styles/Contact.css";
 
 export default function Contact() {
   return (
-    <section className="contact">
+    <section className="contact" id="contact">
       <div className="contact-container">
-        <h2>Fale conosco</h2>
+        <h2>Get in Touch</h2>
+        <p>Have questions or want to collaborate? Send us a message!</p>
         <form className="contact-form">
-          <label htmlFor="name">Nome</label>
-          <input type="text" id="name" name="name" placeholder="Seu nome" />
+          <label htmlFor="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Your name" />
 
-          <label htmlFor="email">E-mail</label>
-          <input type="email" id="email" name="email" placeholder="Seu e-mail" />
+          <label htmlFor="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="Your email" />
 
-          <label htmlFor="message">Mensagem</label>
-          <textarea id="message" name="message" placeholder="Sua mensagem"></textarea>
+          <label htmlFor="message">Message</label>
+          <textarea id="message" name="message" placeholder="Your message"></textarea>
 
-          <button type="submit">Enviar</button>
+          <button type="submit">Send</button>
         </form>
       </div>
     </section>

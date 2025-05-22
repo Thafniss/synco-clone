@@ -4,24 +4,24 @@ export default function Features() {
   return (
     <section className="features">
       <div className="features-container">
-        <h2>O que oferecemos</h2>
+        <h2>Our Features</h2>
         <div className="features-list">
           <div className="feature-item">
-            <h3>Inovação</h3>
+            <h3>Workflow Automation</h3>
             <p>
-              Soluções criativas e modernas para destacar seu negócio no mercado.
+              Automate your business processes effortlessly with our intuitive tools.
             </p>
           </div>
           <div className="feature-item">
-            <h3>Qualidade</h3>
+            <h3>Team Collaboration</h3>
             <p>
-              Entregamos produtos com alto padrão para garantir a melhor experiência.
+              Enhance communication and project management with Synco's integrated platform.
             </p>
           </div>
           <div className="feature-item">
-            <h3>Suporte</h3>
+            <h3>Data Insights</h3>
             <p>
-              Atendimento dedicado para auxiliar você em todas as etapas do projeto.
+              Make informed decisions with real-time analytics and reporting.
             </p>
           </div>
         </div>
