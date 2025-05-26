@@ -1,0 +1,81 @@
+version: '3.8'
+
+services:
+  # Serviço da aplicação web
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: synco-clone-web
+    restart: unless-stopped
+    ports:
+      - "80:80"
+    environment:
+      - NODE_ENV=production
+    networks:
+      - synco-network
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # Serviço de desenvolvimento
+  dev:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    container_name: synco-clone-dev
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+      - "24678:24678" # Porta do Vite HMR
+    volumes:
+      - .:/app
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+      - CHOKIDAR_USEPOLLING=true
+    networks:
+      - synco-network
+    depends_on:
+      - web
+
+  # Serviço de testes
+  test:
+    build:
+      context: .
+      dockerfile: Dockerfile.test
+    container_name: synco-clone-test
+    environment:
+      - NODE_ENV=test
+      - CI=true
+    volumes:
+      - .:/app
+      - /app/node_modules
+    networks:
+      - synco-network
+    command: ["npm", "test"]
+
+  # Serviço de análise de código
+  lint:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    container_name: synco-clone-lint
+    volumes:
+      - .:/app
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+    networks:
+      - synco-network
+    command: ["npm", "run", "lint"]
+
+networks:
+  synco-network:
+    driver: bridge
+
+volumes:
+  node_modules:

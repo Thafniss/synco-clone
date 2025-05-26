@@ -16,12 +16,11 @@ export default function About() {
       id="about"
     >
       {/* Imagem grande à esquerda sem padding/margin */}
-      <div className="w-full md:w-2/3 h-64 md:h-screen overflow-hidden shadow-none">
+      <div className="w-full md:w-2/3 h-64 md:h-screen overflow-hidden">
         <img
           src={aboutImage}
           alt="About us"
-          className="w-full h-full object-cover"
-          style={{ display: 'block' }}
+          className="w-full h-full object-cover block"
         />
       </div>
 

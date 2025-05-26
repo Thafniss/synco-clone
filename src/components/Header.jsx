@@ -16,10 +16,7 @@ export default function Header() {
     <header
       className={`fixed w-full top-0 z-50 transition-shadow ${
         scrolled ? "shadow-md" : "shadow-none"
-      }`}
-      style={{
-        background: "linear-gradient(135deg,#403d39,hsl(210, 6.30%, 12.50%))", 
-      }}
+      } bg-gradient-to-r from-gray-900 to-gray-950`}
     >
       <div className="flex items-center justify-between px-10 py-4">
         <div className="text-2xl font-extrabold tracking-wide text-white cursor-default select-none">
@@ -68,7 +65,7 @@ export default function Header() {
       <a
         href={href}
         onClick={() => setMenuOpen(false)}
-        className="text-white hover:text-syncoGreen transition-colors duration-300"
+        className="text-white hover:text-blue-400 transition-colors duration-300"
       >
         {label}
       </a>

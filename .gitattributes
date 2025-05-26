@@ -1,0 +1,34 @@
+# Definir o comportamento de fim de linha
+* text=auto eol=lf
+
+# Arquivos binários que devem ser mantidos como estão
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.svg binary
+*.ttf binary
+*.woff binary
+*.woff2 binary
+*.eot binary
+*.mp4 binary
+*.webm binary
+*.wav binary
+*.mp3 binary
+*.m4a binary
+*.aac binary
+*.oga binary
+*.ogv binary
+*.ogm binary
+*.spx binary
+*.opus binary
+*.pdf binary
+*.zip binary
+*.gz binary
+*.bz2 binary
+*.tar binary
+*.7z binary
+*.exe binary
+*.dll binary
+*.class binary

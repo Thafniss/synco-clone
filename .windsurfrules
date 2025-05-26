@@ -1,0 +1,75 @@
+{
+    "general": {
+      "response_language": "Português (Brasil)",
+      "code_language": "JavaScript (ES6+)",
+      "comment_language": "Português (Brasil)"
+    },
+    "development_flow": {
+      "steps": [
+        {
+          "phase": "PRIMEIRO",
+          "description": "Antes de modificar arquivos, identifique quais componentes ou estilos são compartilhados e devem permanecer imutáveis para manter a integridade visual e funcional."
+        },
+        {
+          "phase": "SEGUNDO",
+          "description": "Divida alterações grandes em etapas menores, documente o plano e valide com pré-visualização para evitar quebras na interface."
+        },
+        {
+          "phase": "TERCEIRO",
+          "steps": [
+            "Implemente a primeira alteração após validação.",
+            "Revise a consistência visual e de comportamento antes de seguir para a próxima etapa.",
+            "Repita o processo, sempre garantindo que o site funcione bem em diferentes tamanhos de tela."
+          ]
+        }
+      ]
+    },
+    "development_rules": [
+      "Utilize Tailwind CSS para estilização e mantenha classes organizadas.",
+      "Siga o princípio DRY (Don't Repeat Yourself).",
+      "Evite usar CSS inline, priorize classes utilitárias do Tailwind.",
+      "Use Framer Motion para animações suaves e declarativas.",
+      "Utilize nomes semânticos para componentes, variáveis e funções.",
+      "Mantenha a lógica de animação próxima ao componente animado.",
+      "Organize componentes em pastas por domínio ou função.",
+      "Centralize assets (imagens, ícones) em uma pasta específica.",
+      "Comente trechos críticos ou que envolvam lógica de animação complexa.",
+      "Garanta responsividade com classes adequadas do Tailwind."
+    ],
+    "project_guidelines": {
+      "project_type": "Frontend React + Tailwind CSS + Framer Motion",
+      "file_naming": "Use nomes descritivos para componentes e arquivos. Evite nomes genéricos como 'index.js' quando possível ser mais específico.",
+      "terminal_commands": "Utilize a sintaxe padrão do seu sistema (PowerShell no Windows ou Bash no Linux/Mac).",
+      "one_action_at_a_time": "Implemente e teste uma alteração por vez antes de prosseguir.",
+      "immutable_analysis": "Antes de modificar um componente, avalie se ele é usado em outros locais para evitar efeitos colaterais."
+    },
+    "index_js_guidelines": {
+      "type_declaration": "Não obrigatório (JavaScript), mas comente funções e componentes importantes.",
+      "use_existing_components": "Evite reinventar componentes: use bibliotecas como Framer Motion e ícones do Lucide React.",
+      "logic_hooks": "Use React Hooks diretamente nos componentes (ex: useState, useEffect).",
+      "utility_functions": "Crie funções utilitárias dentro do componente se forem específicas, ou em utils/ se forem reutilizáveis.",
+      "server_actions": "Não aplicável no momento — integração com backend será definida futuramente.",
+      "state_management": "Gerencie estado local com useState e useContext apenas se necessário.",
+      "api_routes": "Não aplicável — backend não integrado ainda.",
+      "centralization": "Mantenha lógica de animação, estado e visual coesa dentro do componente sempre que possível.",
+      "styling": {
+        "fonts": "Configure fontes no Tailwind config e aplique classes utilitárias.",
+        "gradients": "Utilize utilitários do Tailwind ou bibliotecas como heroicons se necessário."
+      }
+    },
+    "stack": {
+      "frontend": "React + Tailwind CSS + Framer Motion",
+      "backend": "Não integrado atualmente",
+      "database": "Não integrado atualmente",
+      "authentication": "Não aplicável no momento",
+      "api": "Não aplicável no momento",
+      "storage": "Assets organizados localmente na pasta public ou src/assets"
+    },
+    "execution_policy": {
+      "auto_execute": false,
+      "display_command_only": true,
+      "continue_flow": true,
+      "instructions": "Sempre exiba o comando necessário no terminal, mas nunca o execute automaticamente. Continue com as próximas orientações ou etapas normalmente."
+    }
+  }
+  

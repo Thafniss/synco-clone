@@ -1,5 +1,4 @@
 import React from 'react';
-import '../styles/Footer.css';
 
 const icons = {
   facebook: (
@@ -54,26 +53,57 @@ const icons = {
 
 export default function Footer() {
   return (
-    <footer className="footer">
-      <div className="footer-container">
-        <div className="footer-logo">Synco</div>
+    <footer className="bg-gray-900 text-gray-300 py-12">
+      <div className="container mx-auto px-4">
+        <div className="flex flex-col md:flex-row md:justify-between md:items-center mb-8">
+          <div className="text-2xl font-bold mb-4 md:mb-0">Synco</div>
+          
+          <nav className="flex flex-wrap gap-6 mb-6 md:mb-0">
+            <a href="#home" className="hover:text-white transition-colors">Home</a>
+            <a href="#product" className="hover:text-white transition-colors">Our Product</a>
+            <a href="#about" className="hover:text-white transition-colors">About Us</a>
+            <a href="#blog" className="hover:text-white transition-colors">Blog</a>
+            <a href="#contact" className="hover:text-white transition-colors">Contact</a>
+          </nav>
 
-        <nav className="footer-nav">
-          <a href="#home">Home</a>
-          <a href="#product">Our Product</a>
-          <a href="#about">About Us</a>
-          <a href="#blog">Blog</a>
-          <a href="#contact">Contact</a>
-        </nav>
-
-        <div className="footer-social">
-          <a href="#" aria-label="Facebook" title="Facebook">{icons.facebook}</a>
-          <a href="#" aria-label="Twitter" title="Twitter">{icons.twitter}</a>
-          <a href="#" aria-label="LinkedIn" title="LinkedIn">{icons.linkedin}</a>
-          <a href="#" aria-label="Instagram" title="Instagram">{icons.instagram}</a>
+          <div className="flex gap-4">
+            <a 
+              href="#" 
+              aria-label="Facebook" 
+              title="Facebook"
+              className="text-gray-400 hover:text-white transition-colors"
+            >
+              {icons.facebook}
+            </a>
+            <a 
+              href="#" 
+              aria-label="Twitter" 
+              title="Twitter"
+              className="text-gray-400 hover:text-white transition-colors"
+            >
+              {icons.twitter}
+            </a>
+            <a 
+              href="#" 
+              aria-label="LinkedIn" 
+              title="LinkedIn"
+              className="text-gray-400 hover:text-white transition-colors"
+            >
+              {icons.linkedin}
+            </a>
+            <a 
+              href="#" 
+              aria-label="Instagram" 
+              title="Instagram"
+              className="text-gray-400 hover:text-white transition-colors"
+            >
+              {icons.instagram}
+            </a>
+          </div>
         </div>
 
-        <div className="footer-copy">
+        
+        <div className="border-t border-gray-800 pt-8 text-center text-sm text-gray-500">
           &copy; {new Date().getFullYear()} Synco. All rights reserved.
         </div>
       </div>

@@ -52,28 +52,40 @@ export default function Hero() {
 
   return (
     <section
-      className={`flex flex-col md:flex-row min-h-screen ${isVisible ? "fade-in" : "fade-out"}`}
+      className={`flex flex-col md:flex-row min-h-screen w-full m-0 p-0 transition-opacity duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}`}
       ref={ref}
-      style={{ margin: 0, padding: 0, maxWidth: "100vw" }}
     >
       {/* Imagem esquerda */}
-      <div className="w-full md:w-2/3 h-64 md:h-screen overflow-hidden">
-        <img
-          src={slides[current].image}
-          alt={slides[current].title}
-          className="w-full h-full object-cover"
-          key={slides[current].image}
-        />
+      <div className="relative w-full md:w-2/3 h-64 md:h-screen overflow-hidden">
+        {slides.map((slide, index) => (
+          <div 
+            key={slide.image}
+            className={`absolute inset-0 transition-opacity duration-1000 ${index === current ? 'opacity-100' : 'opacity-0'}`}
+          >
+            <img
+              src={slide.image}
+              alt={slide.title}
+              className="w-full h-full object-cover"
+            />
+          </div>
+        ))}
       </div>
 
       {/* Texto direita */}
-      <div className="w-full md:w-1/3 flex flex-col justify-center px-6 md:px-12 py-6 md:py-0 text-center md:text-left">
-        <h1 className="text-4xl md:text-8xl font-extrabold leading-tight mb-6 font-inter">
-          {slides[current].title}
-        </h1>
-        <p className="text-lg md:text-3xl text-gray-300 max-w-md mx-auto md:mx-0">
-          {slides[current].description}
-        </p>
+      <div className="relative w-full md:w-1/3 flex flex-col justify-center px-6 md:px-12 py-6 md:py-0 text-center md:text-left">
+        {slides.map((slide, index) => (
+          <div 
+            key={`${slide.title}-${index}`}
+            className={`transition-opacity duration-1000 ${index === current ? 'opacity-100' : 'opacity-0 absolute'}`}
+          >
+            <h1 className="text-4xl md:text-8xl font-extrabold leading-tight mb-6 font-inter">
+              {slide.title}
+            </h1>
+            <p className="text-lg md:text-3xl text-gray-300 max-w-md mx-auto md:mx-0">
+              {slide.description}
+            </p>
+          </div>
+        ))}
       </div>
     </section>
   );
