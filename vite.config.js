@@ -17,8 +17,10 @@ export default defineConfig(({ mode }) => {
   // Carrega as variáveis de ambiente
   const env = loadEnv(mode, process?.cwd() || __dirname, '');
 
+  const isProduction = mode === 'production';
+  
   return {
-    base: env.VITE_BASE_URL || '/',
+    base: isProduction ? '/synco-clone/' : '/',
     plugins: [
       react(),
 
